@@ -1,0 +1,8 @@
+# Ignore Jupyter notebooks
+*.ipynb
+
+# Ignore Python virtual environment directories
+.env
+venv/
+ENV/
+env/
