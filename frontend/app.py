@@ -13,7 +13,7 @@ import random
 from agent import create_thread, get_history, send_message, send_image_file
 
 # ---------- Page config ----------
-st.set_page_config(page_title="Chat Interface", page_icon="💬", layout="wide")
+st.set_page_config(page_title="NickAI", page_icon="🌱", layout="wide")
 
 # ---------- Session state bootstrapping ----------
 if "thread_id" not in st.session_state:
