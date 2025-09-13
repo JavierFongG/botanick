@@ -9,9 +9,12 @@ import os
 from PIL import Image
 import io
 import random
-
+from pathlib import Path
 from agent import create_thread, get_history, send_message, send_image_file
 
+# Get the directory of your current script
+current_dir = Path(__file__).parent
+image_path = current_dir / "BioReact - Nick Art.png"
 # ---------- Page config ----------
 st.set_page_config(page_title="NickAI", page_icon="🌱", layout="wide")
 
@@ -181,7 +184,7 @@ if not st.session_state.started:
         ic1, ic2, ic3 = st.columns([1, 8, 1])
         with ic2:
             try:
-                img = Image.open("BioReact - Nick Art.png")  # ensure the file is in your app's working dir
+                img = Image.open(image_path)  # ensure the file is in your app's working dir
                 st.image(img, use_container_width=True)
             except FileNotFoundError:
                 st.info("Image not found")
