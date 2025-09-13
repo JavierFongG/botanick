@@ -178,20 +178,20 @@ if not st.session_state.started:
 
     with col2:
         # make a small 3-col grid inside the middle column and use the center one
-        ic1, ic2, ic3 = st.columns([1, 2, 1])
+        ic1, ic2, ic3 = st.columns([1, 8, 1])
         with ic2:
             try:
-                img = Image.open("nick-profile.jpeg")  # ensure the file is in your app's working dir
+                img = Image.open("BioReact - Nick Art.png")  # ensure the file is in your app's working dir
                 st.image(img, use_container_width=True)
             except FileNotFoundError:
-                st.info("Image not found: `nick-profile.jpeg`")
+                st.info("Image not found")
 
         greetings = [
-            "Welcome! Nick here. What can I help with today?",
-            "Hi! My name is Nick. Is there anything I can help you with?",
-            "Hey! I’m Nick, your go-to guide. What can we tackle together today?",
-            "Hey there! I’m Nick—happy to help. What’s on your mind today?",
-            "Hi, I’m Nick 👋 How can I make your day easier?",
+            "¡Hola soy Nick! ¿Tienes problemas con tus plantas?"
+            , "¡Hola, me llamo Nick! ¿Las plagas están afectando tu jardín, huerto o cultivo?"
+            , "¡Hola, soy Nick! Te ayudaré a diagnosticar las enfermedades de tus plantas"
+            , "¡Hola, me llamo Nick! Yo te ayudaré a acabar con los insectos de tus plantas"
+            , "¡Hola, me llamo Nick! Descubre qué plaga está afectando a tus plantas"
         ]
 
         st.markdown(
@@ -202,6 +202,22 @@ if not st.session_state.started:
         # center the button in the middle column too
         bcol1, bcol2, bcol3 = st.columns([1, 2, 1])
         with bcol2:
+            st.markdown("""
+            <style>
+            .stButton > button {
+                background-color: #4CAF50;
+                color: white;
+                font-weight: bold;
+                border: none;
+                padding: 10px 24px;
+                border-radius: 4px;
+                font-size: 20px;
+            }
+            .stButton > button:hover {
+                background-color: #45a049;
+            }
+            </style>
+            """, unsafe_allow_html=True)
             st.button(
                 "Start",
                 use_container_width=True,
@@ -269,9 +285,15 @@ else:
             for message in st.session_state.messages:
                 display_message(message)
         else:
+            info_options = [
+                "¡Hola, soy Nick! Empecemos a diagnosticar tus plantas. Describe qué problemas ves y qué cambios has visto en ellas. Escribe en cualquier idioma o adjunta una foto de tu planta para comenzar."
+                , "¡Hola, soy Nick! ¿No sabes qué le ocurre a tus plantas? Yo te ayudaré a curarlas de plagas y enfermedades. Escribe en cualquier idioma o adjunta una foto de tu planta para comenzar."
+                , "¡Hola, soy Nick! Si tu planta está siendo afectada por insectos, hongos o babosas, te ayudaré a curarla. Escribe en cualquier idioma o adjunta una foto de tu planta para comenzar."
+                , "¡Hola, soy Nick! Si tu planta está siendo afectada por insectos, hongos o babosas, te ayudaré a curarla. Escribe en cualquier idioma o adjunta una foto de tu planta para comenzar."
+                , "¡Hola, soy Nick! Si tu planta está enferma y no sabes cómo curarla, yo te ayudaré. Describe qué síntomas tiene. Escribe en cualquier idioma o adjunta una foto de tu planta para comenzar."
+            ]
             st.info(
-                "¡Hola! Soy 🌱Nick, tu asistente de chat para consultas de insecticidas y fungicidas. "
-                "Escribe un mensaje o adjunta una imagen para comenzar."
+                random.choice(info_options)
             )
 
     # ---------- Sidebar ----------
