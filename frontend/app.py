@@ -14,7 +14,7 @@ from agent import create_thread, get_history, send_message, send_image_file
 
 # Get the directory of your current script
 current_dir = Path(__file__).parent
-image_path = current_dir / "nick-profile.jpeg"
+image_path = current_dir / "Nick imagen.png"
 # ---------- Page config ----------
 st.set_page_config(page_title="NickAI", page_icon="🌱", layout="wide")
 
