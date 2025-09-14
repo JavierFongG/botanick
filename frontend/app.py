@@ -190,12 +190,13 @@ if not st.session_state.started:
                 st.info("Image not found")
 
         greetings = [
-            "¡Hola soy Nick! ¿Tienes problemas con tus plantas?"
-            , "¡Hola, me llamo Nick! ¿Las plagas están afectando tu jardín, huerto o cultivo?"
-            , "¡Hola, soy Nick! Te ayudaré a diagnosticar las enfermedades de tus plantas"
-            , "¡Hola, me llamo Nick! Yo te ayudaré a acabar con los insectos de tus plantas"
-            , "¡Hola, me llamo Nick! Descubre qué plaga está afectando a tus plantas"
+            "Hi, I'm Nick! Are you having trouble with your plants?",
+            "Hi, my name is Nick! Are pests affecting your garden, vegetable garden, or crops?",
+            "Hi, I'm Nick! I'll help you diagnose diseases in your plants.",
+            "Hi, my name is Nick! I'll help you get rid of the insects on your plants.",
+            "Hi, my name is Nick! Find out which pest is affecting your plants."
         ]
+
 
         st.markdown(
             f"<h2 style='text-align:center;'>{random.choice(greetings)}</h2>",
@@ -288,13 +289,16 @@ else:
             for message in st.session_state.messages:
                 display_message(message)
         else:
+            
             info_options = [
-                "¡Hola, soy Nick! Empecemos a diagnosticar tus plantas. Describe qué problemas ves y qué cambios has visto en ellas. Escribe en cualquier idioma o adjunta una foto de tu planta para comenzar."
-                , "¡Hola, soy Nick! ¿No sabes qué le ocurre a tus plantas? Yo te ayudaré a curarlas de plagas y enfermedades. Escribe en cualquier idioma o adjunta una foto de tu planta para comenzar."
-                , "¡Hola, soy Nick! Si tu planta está siendo afectada por insectos, hongos o babosas, te ayudaré a curarla. Escribe en cualquier idioma o adjunta una foto de tu planta para comenzar."
-                , "¡Hola, soy Nick! Si tu planta está siendo afectada por insectos, hongos o babosas, te ayudaré a curarla. Escribe en cualquier idioma o adjunta una foto de tu planta para comenzar."
-                , "¡Hola, soy Nick! Si tu planta está enferma y no sabes cómo curarla, yo te ayudaré. Describe qué síntomas tiene. Escribe en cualquier idioma o adjunta una foto de tu planta para comenzar."
+                "Hi, I'm Nick! Let's start diagnosing your plants. Describe what problems you see and what changes you've noticed. Write in any language or attach a photo of your plant to get started.",
+                "Hi, I'm Nick! Not sure what's happening to your plants? I'll help you treat pests and diseases. Write in any language or attach a photo of your plant to get started.",
+                "Hi, I'm Nick! If your plant is being affected by insects, fungi, or slugs, I'll help you treat it. Write in any language or attach a photo of your plant to get started.",
+                "Hi, I'm Nick! If your plant is being affected by insects, fungi, or slugs, I'll help you treat it. Write in any language or attach a photo of your plant to get started.",
+                "Hi, I'm Nick! If your plant is sick and you don't know how to treat it, I'll help you. Describe its symptoms. Write in any language or attach a photo of your plant to get started."
             ]
+            
+
             st.info(
                 random.choice(info_options)
             )
